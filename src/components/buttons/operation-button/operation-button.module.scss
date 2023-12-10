@@ -1,0 +1,16 @@
+.operationButton {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  margin: 0.2rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: lightskyblue;
+  &:active {
+    background-color: steelblue;
+  }
+}
