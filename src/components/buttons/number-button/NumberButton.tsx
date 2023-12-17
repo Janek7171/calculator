@@ -1,12 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
+import { CalculatorContext } from 'App';
+import { output } from 'App';
 import classes from './number-button.module.scss';
 
-const NumberButton = ({ symbol, setOutput }: any) => {
+const NumberButton = ({ symbol }: { symbol: string }) => {
+  const context = useContext(CalculatorContext);
   const clickHandler = () => {
-    setOutput((prevOutput: any) => {
-      if (prevOutput === '0') return symbol;
-      else return prevOutput + symbol;
-    });
+    context.setOutput({ type: 'number', payload: symbol });
   };
   return (
     <button className={classes.numberButton} onClick={clickHandler}>

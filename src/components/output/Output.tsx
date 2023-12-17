@@ -1,13 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { CalculatorContext } from 'App';
 import classes from './output.module.scss';
 
-interface OutputProps {
-  value: string;
-}
-
-const Output = ({ value }: OutputProps) => {
-  return <div className={classes.output}>{value}</div>;
+const Output = () => {
+  const context = useContext(CalculatorContext);
+  return <div className={classes.output}>{context.output.value}</div>;
 };
 
 export default Output;

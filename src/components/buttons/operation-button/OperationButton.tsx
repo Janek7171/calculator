@@ -1,16 +1,26 @@
 import React from 'react';
+import { useContext } from 'react';
+import { CalculatorContext } from 'App';
 import classes from './operation-button.module.scss';
 
-const OperationButton = ({ symbol, operation, setOutput }: any) => {
+const OperationButton = ({ symbol, operation }: any) => {
+  const context = useContext(CalculatorContext);
   const clickHandler = () => {
     switch (operation) {
       case 'clear':
-        setOutput('0');
+        context.setOutput({ type: 'clear' });
         break;
       case 'negate':
-        setOutput((prevOutput: any) => {
-          return -prevOutput;
-        });
+        context.setOutput({ type: 'negate' });
+        break;
+      case 'percentage':
+        context.setOutput({ type: 'percentage' });
+        break;
+      case 'multiply':
+        context.setOutput({ type: 'multiply' });
+        break;
+      case 'equals':
+        context.setOutput({ type: 'equals' });
         break;
     }
   };
