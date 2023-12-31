@@ -19,8 +19,20 @@ const OperationButton = ({ symbol, operation }: any) => {
       case 'multiply':
         context.setOutput({ type: 'multiply' });
         break;
+      case 'divide':
+        context.setOutput({ type: 'divide' });
+        break;
+      case 'add':
+        context.setOutput({ type: 'add' });
+        break;
+      case 'subtract':
+        context.setOutput({ type: 'subtract' });
+        break;
       case 'equals':
         context.setOutput({ type: 'equals' });
+        break;
+      case 'point':
+        context.setOutput({ type: 'point' });
         break;
     }
   };

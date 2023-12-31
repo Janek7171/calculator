@@ -11,12 +11,14 @@ const InputContainer = ({ setOutput }: any) => {
         if (button.type === 'operation') {
           return (
             <OperationButton
+              key={button.operation}
               symbol={button.symbol}
               operation={button.operation}
               setOutput={setOutput}
             />
           );
-        } else return <NumberButton symbol={button.symbol} />;
+        } else
+          return <NumberButton symbol={button.symbol} key={button.symbol} />;
       })}
     </div>
   );
